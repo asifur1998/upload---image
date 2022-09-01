@@ -1,0 +1,13 @@
+
+
+
+
+
+image upload
+        $image=$request->image;
+        $imagename = time().'_'. $image->getClientOriginalExtension();
+        $request->image->move('photo/', $imagename);       // photo -> folder -> source  
+                                                          //   $image -> destination
+        $Product->image = $imagename;
+image show 
+<td><img src="photo/{{$data->image}}"alt="image not found"height="150"width="150"></td>
